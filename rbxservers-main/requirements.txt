@@ -1,0 +1,5 @@
+dotenv
+flask
+mysql-connector-python
+requests
+timeago

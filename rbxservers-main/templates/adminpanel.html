@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block title %}Admin{% endblock %}
+{% block head %}
+{{ super()}}
+<script src="/static/js/adminpanel.js"></script>
+<style>
+    body {
+        background-color:rgb(218, 218, 218) !important;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<section class="container text-black p-5 text-center text-sm-start shadow-lg vh-100" style="background-color: rgb(255, 255, 255)">
+    <div class="container">
+        <div class="align-items-center">
+            <div class=" w-100">
+                <div class="p-3 rounded border border-1 bg-body">
+                    <h1><strong>RBXServers</strong> Admin Panel</h1>
+                    <p class="my-2">
+                        This panel is only meant for authorised users, <b class="text-danger">do not</b> take any screenshots or recordings of this page unless given permission.
+                    </p>
+                </div>
+                <ul class="nav nav-tabs mt-3 rounded-1">
+                    <li class="nav-item fw-bold">
+                      <a class="nav-link active" data-bs-toggle="tab" aria-current="page" id="placebutton" href="#place">Place Info</a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                      <a class="nav-link" data-bs-toggle="tab" href="#privateserver">Private Server Lookup</a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                      <a class="nav-link" data-bs-toggle="tab" href="#generatetoken">Generate Admin Token</a>
+                    </li>
+                </ul>
+                <div class="tab-content w-100 border border-top-0 rounded-bottom p-3">
+                    <div class="tab-pane fade show active" id="place">
+                        <h2>Place Info Lookup</h2>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" placeholder="PlaceId" id="placeidforminput"/>
+                            <button class="btn-primary btn btn-sm fw-bold text-sm-center flex-fill ms-2" id="placeid-button">Search</button>
+                        </div>
+                        <div id="placeid-results" class="border rounded mt-2 p-2">
+                            <h2 id="placeid-gamename" class="fw-bold mb-0">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+                            <h6 id="placeid-id" class="text-secondary">internal server id</h6>
+                            <p class="mb-0">Total Server Count: <b id="placeid-servercount">?</b></p>
+                            <p class="mb-0">Last refresh: <b id="placeid-lastrefresh">?</b></p>
+                            <p class="mb-0" id="placeid-isblacklisted">Not blacklisted</p>
+                            <div class="rounded mt-2 p-2">
+                                <button id="placeid-recheck" class="btn-secondary btn text-sm-center">Recheck All servers</button>
+                                <button id="placeid-gameinfo" class="btn-secondary btn text-sm-center">Refresh Game info</button>
+                                <button id="placeid-wipe" class="btn-danger btn text-sm-center">Wipe all servers</button>
+                                <button id="placeid-blacklist" class="btn-danger btn text-sm-center">Blacklist</button>
+                                <button id="placeid-unblacklist" class="btn-success btn text-sm-center">Unblacklist</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="privateserver">
+                        <h2>Private Server Lookup</h2>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" placeholder="Internal Server Id" id="serveridforminput"/>
+                            <button class="btn-primary btn btn-sm fw-bold text-sm-center flex-fill ms-2" id="serverid-button">Search</button>
+                        </div>
+                        <div id="serverid-results" class="border rounded mt-2 p-2">
+                            <h2 id="serverid-linkcode" class="fw-bold mb-0">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+                            <h6 id="serverid-internal" class="text-secondary">internal server id</h6>
+                            <p class="mb-0">Uploaded on: <b id="serverid-uploaded">?</b></p>
+                            <p class="mb-0">Last Checked: <b id="serverid-checked">?</b></p>
+                            <p class="mb-0">Uploader Hash: <b id="serverid-uploader">?</b></p>
+                            <p class="mb-0">Place: <b id="serverid-place">?</b></p>
+                            <p class="mb-0" id="serverid-isvalid">Not blacklisted</p>
+                            <div class="rounded mt-2 p-2">
+                                <button id="serverid-recheck" class="btn-secondary btn text-sm-center">Recheck server</button>
+                                <button id="serverid-delete" class="btn-danger btn text-sm-center">Delete Server</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="generatetoken">
+                        <h2>Generate Admin Token</h2>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" placeholder="Token Nickname" id="generate-token-nickname"/>
+                            <select class="form-select flex-fill ms-2" id="generate-token-level-select" style="width: 6%;">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <button class="btn-primary btn btn-sm fw-bold text-sm-center flex-fill ms-2" id="generate-token-btn">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}{{place_name |safe}}{% endblock %}
+{% block embedtags %}
+<meta property="og:title" content="{{place_name |safe}}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{place_thumbnaillink}}" />
+<meta property="og:description" content="Need to find VIP Servers for {{place_name |safe}} ? Come to rbxservers.xyz we help make it easier for you to find VIP servers for games you need!" />
+<meta name="description" content="Need to find VIP Servers for {{place_name |safe}} ? Come to rbxservers.xyz we help make it easier for you to find VIP servers for games you need!"/>
+{% endblock %}
+{% block head %}
+{{ super()}}
+<link href="/static/css/gamelist.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+<section class="container text-light p-5 text-center shadow-lg min-vh-100" style="background-color: rgb(49, 49, 49)">
+    <div class="container">
+        <div class="d-sm-flex p-3 w-100 rounded-3 align-items-center shadow-lg" style="background-color: rgb(29, 29, 29)">
+            <img class="img-fluid d-md-block d-none rounded-3" style="width:15%;" src={{place_thumbnaillink}}></img>
+            <img class="img-fluid d-md-none rounded-3" style="width:60%; max-width: 200px;" src={{place_thumbnaillink}}></img>
+            <div class="ms-sm-4 mt-2 mt-sm-0 text-sm-start flex-fill overflow-hidden">
+                <a class="nav-link" target="_blank" href="{{gamelink |safe}}"><h1 class="fw-bold flex-fill text-truncate">{{place_name |safe}}</h1></a>
+                <h5 class="text-secondary fw-bold">{{servercount |safe}} Servers</h5>
+            </div>
+        </div>
+        <div class="w-100 mt-2">
+            <div class="row">
+                <div class="col">
+                    {{server_list |safe}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

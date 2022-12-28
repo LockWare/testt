@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Game List{% endblock %}
+{% block head %}
+{{ super()}}
+<link href="/static/css/gamelist.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+<section class="container text-light p-5 text-center shadow-lg min-vh-100" style="background-color: rgb(49, 49, 49)">
+    <h1 class="text-md-start fw-bold">Most popular games</h1>
+    <div class="d-flex justify-content-center">
+        <div class="row w-100">
+            {{GameSectionContent |safe}}
+        </div>
+    </div>
+    <a href="/search" class="nav-link mt-1">Can't find the game you are looking for? Click me to search for the game you want</a>
+</section>
+{% endblock %}

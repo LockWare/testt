@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Search{% endblock %}
+{% block head %}
+{{ super()}}
+<script src="/static/js/searchpage.js"></script>
+{% endblock %}
+{% block content %}
+<section class="container text-light p-5 text-center text-sm-start shadow-lg min-vh-100" style="background-color: rgb(49, 49, 49)">
+    <div class="container">
+        <div class="align-items-center">
+            <div class=" w-100">
+                <h1 class="fw-bold">Search</h1>
+                <p class="my-2">
+                    Can't find the game you want? Search it here by pasting in the game link!
+                </p>
+                <div class="rounded mt-4 justify-content-end ">
+                    <label for="vipserverlink-form-input" class="form-label h6 fw-bold align-items-center">Game link</label>
+                    <div class="d-flex">
+                        <input class="form-control bg-dark border-dark text-light" style="width:94%" required id="gamelink-form-input" placeholder="https://www.roblox.com/games/000000000/">
+                        <button class="btn-success btn btn-sm fw-bold text-sm-center flex-fill ms-2" id="gamelink-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

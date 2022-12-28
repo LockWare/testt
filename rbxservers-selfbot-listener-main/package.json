@@ -1,0 +1,25 @@
+{
+  "name": "rbxservers-selfbot-listener",
+  "version": "1.0.0",
+  "description": "Discord Selfbot to listen for roblox server links and upload them to rbxservers",
+  "main": "main.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrintedScript/rbxservers-selfbot-listener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrintedScript/rbxservers-selfbot-listener/issues"
+  },
+  "homepage": "https://github.com/PrintedScript/rbxservers-selfbot-listener#readme",
+  "dependencies": {
+    "console-log-colors": "^0.2.3",
+    "discord.js-selfbot-v13": "^2.6.12",
+    "dotenv": "^16.0.2",
+    "node-fetch": "^3.2.10"
+  }
+}

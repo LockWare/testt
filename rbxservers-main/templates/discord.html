@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Discord{% endblock %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript">
+    function redirect()
+    {
+        window.open('https://discord.gg/y4BZGH8hAx','_blank');
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<section class=" text-light p-5 text-center text-sm-start shadow-lg vh-100" style="background-color: rgb(49, 49, 49)">
+    <div class="container">
+        <div class="align-items-center">
+            <div class=" w-100">
+                <h1><span class="text-primary fw-bold">Discord</span> opened in a new tab!</h1>
+                <p class="my-2">
+                    Thanks for joining the Discord server! Might not open if you have pop-ups automatically blocked, <a class="text-primary fw-bold" href="https://discord.gg/y4BZGH8hAx">Click here</a> to be redirected to the Discord server.
+                </p>
+            </div>
+            <div>
+        </div>
+    </div>
+</section>
+{% endblock %}

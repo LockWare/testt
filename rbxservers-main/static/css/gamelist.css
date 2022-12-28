@@ -1,0 +1,31 @@
+.card-hover:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s;
+    z-index: 3;
+    --webkit-transition: all 0.1s;
+}
+
+.card-hover {
+    transition: all 0.1s;
+    z-index: 1;
+    --webkit-transition: all 0.1s;
+}
+
+.card-hover-sm {
+    transition: all 0.1s;
+    z-index: 1;
+    --webkit-transition: all 0.1s;
+}
+.card-hover-sm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s;
+    z-index: 3;
+    --webkit-transition: all 0.1s;
+}
+
+.game-card p,
+.game-card h4 {
+    margin-bottom: 0;
+}
